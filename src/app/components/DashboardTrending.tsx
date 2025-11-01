@@ -56,7 +56,9 @@ const DashboardTrending: FC<Props> = ({ onBack }) => {
         <div>
           <h1 className="text-xl font-bold mb-6">GETSTAC</h1>
           <nav className="space-y-2">
-            <button className="w-full text-left px-3 py-2 rounded-lg bg-gray-900 text-white flex gap-2">
+            <button 
+            onClick={onBack}
+            className="w-full text-left px-3 py-2 rounded-lg bg-gray-900 text-white flex gap-2">
               <LayoutDashboard /> Dashboard
             </button>
             <button
