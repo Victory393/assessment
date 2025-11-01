@@ -62,7 +62,7 @@ export default function SigninPage() {
               placeholder="johndoe@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3 py-2 border-2 border-gray-300 rounded-md text-gray-700 focus:outline-none focus:border-gray-500"
+              className="w-full px-3 py-2 border-2 border-gray-300 rounded-md text-gray-700 focus:outline-none focus:border-red-400"
             />
           </div>
 
@@ -79,7 +79,7 @@ export default function SigninPage() {
               placeholder="**********"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 border-2 border-gray-300 rounded-md text-gray-700 tracking-widest focus:outline-none focus:border-gray-500"
+              className="w-full px-3 py-2 border-2 border-gray-300 rounded-md text-gray-700 tracking-widest focus:outline-none focus:border-red-400"
             />
           </div>
 
@@ -88,7 +88,7 @@ export default function SigninPage() {
               type="checkbox"
               checked={staySignedIn}
               onChange={(e) => setStaySignedIn(e.target.checked)}
-              className="h-4 w-4 border-2 border-gray-300 rounded"
+              className="h-4 w-4 border-2 border-gray-300 accent-gray-900 rounded"
             />
             <span className="ml-2 text-sm">Stay signed in for a week</span>
           </div>

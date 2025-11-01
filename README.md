@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GETSTAC Assesssment
+
+## Overview
+This is a responsive dashboard built with **Next.js**, **TypeScript**, and **Tailwind CSS**.  
+It includes a sidebar that turns into a hamburger menu on mobile, a main dashboard area with summary cards, a search and filter section, and a data table. The whole setup is designed with a **mobile-first approach** — it looks clean on big screens and stays usable on small ones. 
+
+## Note
+As I am aware of the slight delay caused by a technical issue, I rather focused on the most important parts of the design trying my best to meet up to the deadline. 
+
+The website works perfect on mobile phones and as well desktop. 
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repo
+```bash
+git clone https://github.com/your-username/dashboard-project.git
+cd assessment
+```
 
+### 2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Run the app
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open your browser and visit [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
+```
+public
+src/
+app/
+ (auth)/
+   signin/
+    page.tsx
+components/
+  ui/
+    ├─ button.tsx
+    ├─ card.tsx
+    ├─ input.tsx
 
-## Learn More
+  ├─ AreaChartExample.tsx
+  ├─ DashboardOverview.tsx
+  ├─ DashboardTrending.tsx
+  ├─ LocationActivities.tsx
+  ├─ Modal.tsx
+  ├─ 
+lib/
+  └─ data/
+      └─ mockData.ts
+ utils.ts
+pages/
+  └─ index.tsx
 
-To learn more about Next.js, take a look at the following resources:
+ globals.css
+ package.json
+ { other next and ts files installed by default}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Responsive Design Notes
+- The layout is built **mobile-first**, so everything scales up naturally.
+- The **sidebar** collapses into a hamburger menu on smaller screens.
+- **Buttons and filters** stack vertically on mobile for easier tapping.
+- **Tables and charts** scroll horizontally when needed — no broken layouts.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Design Decisions & Tradeoffs
+- I used **Tailwind CSS** to keep styling consistent and responsive without writing a ton of CSS files.  
+- **Recharts** was added for charts — it’s simple and flexible enough for most dashboard needs.  
+- The **hamburger toggle** adds a little complexity with state management, but it’s worth it for mobile usability.  
+- Keeping things inline with Tailwind classes made development faster but can make the JSX a bit long.  
+- I focused on **clean layout and UX** over flashy visuals — readability and responsiveness came first.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Future Improvements
+Here are a few things I’d like to add or refine later:
+- Save the sidebar’s open/close state between pages.  
+- Add accessibility roles and keyboard navigation.  
+- Include a dark mode toggle.  
+- Hook the dashboard up to real data instead of mock content.
