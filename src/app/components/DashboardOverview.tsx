@@ -7,6 +7,7 @@
   import { Button } from "@/components/ui/button"
   import Modal from "./Modal";  
   import { trendingLocations } from "@/data/data";
+  import {Bell, LayoutDashboard, Users, MousePointer, Settings, LucideChartNoAxesColumnIncreasing, ShieldCheck} from "lucide-react";
   
   //import { UserRound } from "lucide-react";
   
@@ -51,24 +52,24 @@
           <div>   
             <h1 className="text-xl font-bold mb-6">GETSTAC</h1>
             <nav className="space-y-2">
-              <button className="w-full text-left px-3 py-2 rounded-lg bg-gray-900 text-white">Dashboard</button>
-              <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100">Managers</button>
-              <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100">Locations</button>
-              <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100">Billing & Invoices</button>
+              <button className="w-full text-left px-3 py-2 rounded-lg bg-gray-900 text-white flex gap-2"><LayoutDashboard />Dashboard</button>
+              <button onClick={onMonitorClick} className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 flex gap-2"><Users />Managers</button>
+              <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 flex gap-2"><MousePointer />Locations</button>
+              <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 flex gap-2"><LucideChartNoAxesColumnIncreasing />Billing & Invoices</button>
             </nav>
           </div>
           <div className="space-y-2">
             <h2 className="text-lg ml-2">Support</h2>
-            <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100">Settings</button>
-            <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100">Whats new?</button>
-            <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100">Custom Request</button>
+            <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 flex gap-2"><Settings />Settings</button>
+            <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 flex gap-2"><ShieldCheck />Whats new?</button>
+            <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 flex gap-2"><ShieldCheck />Custom Request</button>
           </div>
         </aside>
         
         {/* Main Content */}
         <main className="flex-1 overflow-y-auto pb-8">
           {/* Header */}
-          <header className="flex items-center justify-between mb-6 bg-white w-full p-4">
+          <header className="sticky top-0 z-10 flex items-center justify-between mb-6 bg-white w-full p-4">
             <div>
               <h2 className="text-lg font-normal">Adebowale Paul-George</h2>
               <p className="text-sm text-gray-500">Welcome back to Bokku HQ</p>

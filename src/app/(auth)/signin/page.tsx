@@ -88,7 +88,7 @@ export default function SigninPage() {
               type="checkbox"
               checked={staySignedIn}
               onChange={(e) => setStaySignedIn(e.target.checked)}
-              className="h-4 w-4 border-2 border-gray-300 rounded accent-black"
+              className="h-4 w-4 border-2 border-gray-300 rounded"
             />
             <span className="ml-2 text-sm">Stay signed in for a week</span>
           </div>

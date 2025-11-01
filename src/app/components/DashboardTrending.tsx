@@ -5,8 +5,8 @@
   import { Button } from "@/components/ui/button"
   import Modal from "./Modal";  
   import { trendingLocations } from "@/data/data";
-
-  import { UserRound } from "lucide-react";
+  
+  import {Bell, LayoutDashboard, Users, MousePointer, Settings, LucideChartNoAxesColumnIncreasing, ShieldCheck} from "lucide-react";
   
   
   
@@ -48,17 +48,17 @@
           <div>   
             <h1 className="text-xl font-bold mb-6">GETSTAC</h1>
             <nav className="space-y-2">
-              <button className="w-full text-left px-3 py-2 rounded-lg bg-gray-900 text-white">Dashboard</button>
-              <button onClick={onBack} className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100">Managers</button>
-              <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100">Locations</button>
-              <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100">Billing & Invoices</button>
+              <button className="w-full text-left px-3 py-2 rounded-lg bg-gray-900 text-white flex gap-2"><LayoutDashboard />Dashboard</button>
+              <button onClick={onBack} className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 flex gap-2"><Users />Managers</button>
+              <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 flex gap-2"><MousePointer />Locations</button>
+              <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 flex gap-2"><LucideChartNoAxesColumnIncreasing />Billing & Invoices</button>
             </nav>
           </div>
           <div className="space-y-2">
             <h2 className="text-lg ml-2">Support</h2>
-            <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100">Settings</button>
-            <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100">Whats new?</button>
-            <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100">Custom Request</button>
+            <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 flex gap-2"><Settings />Settings</button>
+            <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 flex gap-2"><ShieldCheck />Whats new?</button>
+            <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 flex gap-2"><ShieldCheck />Custom Request</button>
           </div>
         </aside>
         
@@ -70,7 +70,10 @@
               <h2 className="text-lg font-normal">Adebowale Paul-George</h2>
               <p className="text-sm text-gray-500">Welcome back to Bokku HQ</p>
             </div>
-            <Button onClick={() => setIsModalOpen(true)} className="bg-black tracking-wider text-white p-6">Escalate an Issue</Button>
+            <div className="items-center justify-center flex gap-2">
+              <Button onClick={() => setIsModalOpen(true)} className="bg-black tracking-wider text-white p-6">Escalate an Issue</Button>
+              <button><Bell className="stroke-black" /> </button>
+            </div>
           </header>
           
           <div className="p-6 space-y-1">
@@ -158,7 +161,9 @@
         <table className="w-full overflow-x-auto text-sm text-left border-0 rounded-2xl border-spacing-y-2">
           <thead className="bg-gray-900 text-white">
             <tr>
-              <th className="px-4 py-2">Location Name</th>
+              <th className="px-4 py-2 flex">
+                <span>Location Name</span>
+              </th>
               <th className="px-4 py-2">Region</th>
               <th className="px-4 py-2">Manager</th>
               <th className="px-4 py-2">Opening Balance</th>
@@ -170,88 +175,93 @@
           <tbody> 
             {paginated.map((loc, idx) => (
               <tr key={idx} className="bg-white shadow-sm rounded-lg py-4">
-                <td className="px-4 py-6">{loc.locationName}</td>
-                <td className="px-4 py-6">{loc.region}</td>
-                <td className="px-4 py-6">{loc.manager}</td>
-                <td className="px-4 py-6">₦{loc.openingBalance.toLocaleString()}</td>
-                <td className="px-4 py-6">₦{loc.remainingBalance.toLocaleString()}</td>
-                <td className="px-4 py-6">₦{loc.amountMopped.toLocaleString()}</td>
                 <td className="px-4 py-6">
-                  <span
-                  className={`px-3 py-1 text-xs font-medium rounded-full ${
-                    loc.feeStatus === "Daily Fee"
-                    ? "bg-green-100 text-green-700"
-                    : "bg-purple-100 text-purple-700"
-                  }`}
-                  >
-                  {loc.feeStatus}
-                </span>
-              </td>
-            </tr>
-            ))}
-          </tbody>
-        </table>
-        <div className="flex justify-between items-center border-t border-gray-200 py-3 px-4">
-          <button 
-          id="prev-btn" 
-          onClick={() => setPage(p => Math.max(p - 1, 1))} disabled={page === 1} 
-          className="px-4 py-2 text-sm font-medium text-gray-900 border-2 rounded-lg hover:bg-gray-600 hover:text-white disabled:opacity-50"
+                  <input
+                  type="checkbox"
+                  className="h-4 w-4 mr-2 rounded checked:bg-black checked:accent-white checked:border-2 checked:border-black"
+                  />
+                  {loc.locationName}</td>
+                  <td className="px-4 py-6">{loc.region}</td>
+                  <td className="px-4 py-6">{loc.manager}</td>
+                  <td className="px-4 py-6">₦{loc.openingBalance.toLocaleString()}</td>
+                  <td className="px-4 py-6">₦{loc.remainingBalance.toLocaleString()}</td>
+                  <td className="px-4 py-6">₦{loc.amountMopped.toLocaleString()}</td>
+                  <td className="px-4 py-6">
+                    <span
+                    className={`px-3 py-1 text-xs font-medium rounded-full ${
+                      loc.feeStatus === "Daily Fee"
+                      ? "bg-green-100 text-green-700"
+                      : "bg-purple-100 text-purple-700"
+                    }`}
+                    >
+                    {loc.feeStatus}
+                  </span>
+                </td>
+              </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="flex justify-between items-center border-t border-gray-200 py-3 px-4">
+            <button 
+            id="prev-btn" 
+            onClick={() => setPage(p => Math.max(p - 1, 1))} disabled={page === 1} 
+            className="px-4 py-2 text-sm font-medium text-gray-900 border-2 rounded-lg hover:bg-gray-600 hover:text-white disabled:opacity-50"
+            
+            >
+            &larr; Previous
+          </button>
           
+          <span id="page-info" className="text-sm text-gray-700">Page 1 of 10</span>
+          
+          <button
+          onClick={() => setPage(p => Math.min(p + 1, totalPages))} disabled={page === totalPages}
+          id="next-btn" 
+          className="px-4 py-2 text-sm font-medium text-gray-900 border-2 rounded-lg hover:bg-gray-600 hover:text-white disabled:opacity-50"
           >
-          &larr; Previous
+          Next &rarr;
         </button>
-        
-        <span id="page-info" className="text-sm text-gray-700">Page 1 of 10</span>
-        
-        <button
-        onClick={() => setPage(p => Math.min(p + 1, totalPages))} disabled={page === totalPages}
-        id="next-btn" 
-        className="px-4 py-2 text-sm font-medium text-gray-900 border-2 rounded-lg hover:bg-gray-600 hover:text-white disabled:opacity-50"
-        >
-        Next &rarr;
-      </button>
+      </div>
     </div>
-  </div>
-  
-  
-  
-  <Modal
-  isOpen={isModalOpen}
-  onClose={() => setIsModalOpen(false)}
-  title=""
-  className=""
-  >
-  <div className="space-y-2 mb-4">
-    <h2 className="font-semibold text-lg">Candice Ademide is your Account Manager</h2>
-    <p className="text-sm font-extralight">The fastest way to have issues resolved is to reach out to your account manager ASAP. 
-      Find your account manager's details below
-    </p>
-  </div>
-  
-  <div className="flex gap-4 pb-6">
-    <Image 
-    src={'/vercel.svg'} 
-    width={50} height={50} 
-    alt="account manager picture" 
-    className="border border-black rounded-4xl bg-black p-2" />
-
-    <div className="flex flex-col gap-3">
-      <h3 className="font-semibold text-gray-900">Candice Ademide</h3>
-      <p>candice.ademide@getstac.com</p>
-      <span>+2349087254489</span>
-    </div>
-  </div>
-  <div className="flex flex-col">
-    <button 
-    className="mt-4 p-2 rounded-md text-sm bg-gray-900 text-white hover:bg-black"
+    
+    
+    
+    <Modal
+    isOpen={isModalOpen}
+    onClose={() => setIsModalOpen(false)}
+    title=""
+    className=""
     >
-    Send an email
+    <div className="space-y-2 mb-4">
+      <h2 className="font-semibold text-lg">Candice Ademide is your Account Manager</h2>
+      <p className="text-sm font-extralight">The fastest way to have issues resolved is to reach out to your account manager ASAP. 
+        Find your account manager's details below
+      </p>
+    </div>
+    
+    <div className="flex gap-4 pb-6">
+      <Image 
+      src={'/vercel.svg'} 
+      width={50} height={50} 
+      alt="account manager picture" 
+      className="border border-black rounded-4xl bg-black p-2" />
+      
+      <div className="flex flex-col gap-3">
+        <h3 className="font-semibold text-gray-900">Candice Ademide</h3>
+        <p>candice.ademide@getstac.com</p>
+        <span>+2349087254489</span>
+      </div>
+    </div>
+    <div className="flex flex-col">
+      <button 
+      className="mt-4 p-2 rounded-md text-sm bg-gray-900 text-white hover:bg-black"
+      >
+      Send an email
+    </button>
+    <button 
+    className="mt-4 p-2 border rounded-md text-sm bg-white text-black hover:text-gray-700 hover:bg-gray-100"
+    >
+    Send a message on WhatsApp
   </button>
-  <button 
-  className="mt-4 p-2 border rounded-md text-sm bg-white text-black hover:text-gray-700 hover:bg-gray-100"
-  >
-  Send a message on WhatsApp
-</button>
 </div>
 </Modal>
 </main>
