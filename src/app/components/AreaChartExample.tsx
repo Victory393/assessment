@@ -1,13 +1,13 @@
 'use client'
 
 import { Area, AreaChart, Tooltip, XAxis, YAxis } from "recharts"
-import data from '@/data/data.json'
+
 
 const AreaChartExample = ({ isAnimationActive = true }) => (
   <AreaChart
     style={{ width: '100%', maxWidth: '700px', maxHeight: '70vh', aspectRatio: 1.618 }}
     responsive
-    data={data}
+    //data={data}
     className="h-40"
     margin={{ top: 10, right: 0, left: 0, bottom: 0 }}
   >

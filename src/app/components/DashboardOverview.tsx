@@ -3,13 +3,12 @@
   import { Card, CardContent } from "@/components/ui/card";
   import { Area, AreaChart, Tooltip, XAxis, ResponsiveContainer } from "recharts"
   import { chartData }  from "@/data/data";
-  import AreaChartExample from "./AreaChartExample";
   import Image from "next/image";
   import { Button } from "@/components/ui/button"
   import Modal from "./Modal";  
   import { trendingLocations } from "@/data/data";
   
-  import { UserRound } from "lucide-react";
+  //import { UserRound } from "lucide-react";
   
   
   
