@@ -1,3 +1,4 @@
+// app/dashboard/page.tsx or components/Dashboard.tsx
 "use client";
 import { useState } from "react";
 import DashboardOverview from "@/components/DashboardOverview";

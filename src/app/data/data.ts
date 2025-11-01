@@ -1,3 +1,35 @@
+export const stats = {
+balanceAcrossStores: '₦50,000,000',
+todaysTransactions: 200,
+totalLocations: 78,
+totalManagers: 78
+};
+
+
+export const chartData = [
+{ month: 'Feb', high: 250, low: 180 },
+{ month: 'Mar', high: 300, low: 200 },
+{ month: 'Apr', high: 320, low: 210 },
+{ month: 'May', high: 400, low: 260 },
+{ month: 'Jun', high: 380, low: 270 },
+{ month: 'Jul', high: 420, low: 300 },
+{ month: 'Aug', high: 450, low: 320 },
+{ month: 'Sep', high: 460, low: 340 },
+{ month: 'Oct', high: 470, low: 350 },
+{ month: 'Nov', high: 490, low: 360 },
+{ month: 'Dec', high: 500, low: 380 },
+{ month: 'Jan', high: 530, low: 400 }
+];
+
+
+//export const trendingLocations = [
+//{ id: 1, name: 'Ikeja Mall', region: 'Lagos', manager: 'Tolu', openingBalance: '₦5,000,000', remaining: '₦1,200,000', amountMopped: '₦3,800,000', feeStatus: 'Active' },
+//{ id: 2, name: 'Lekki Phase 1', region: 'Lagos', manager: 'Adebayo', openingBalance: '₦4,000,000', remaining: '₦900,000', amountMopped: '₦3,100,000', feeStatus: 'Active' },
+//{ id: 3, name: 'Kano City', region: 'Kano', manager: 'Fatima', openingBalance: '₦3,500,000', remaining: '₦800,000', amountMopped: '₦2,700,000', feeStatus: 'Pending' }
+//];
+
+
+
 // trendingLocations.ts
 
 export interface TrendingLocation {
